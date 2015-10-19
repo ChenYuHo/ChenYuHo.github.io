@@ -1,0 +1,66 @@
+<html>
+<head>
+	<title>Disease Warner | TTH Hackathon</title>
+	<meta charset="utf-8">
+	<meta http-equiv="Content-Type" content="text/html" charset="UTF-8">
+    <meta name="generator" content="Elton ChenYu Ho">
+    <meta name="author" content="Elton ChenYu Ho">
+	<meta name="description" content="records of thoughts, works, and experience">
+	<meta property="og:type" content="blog">
+	<meta property="og:title" content="Elton ChenYu Ho">
+	<meta property="og:url" content="http://elton.idv.tw/index.html">
+	<meta property="og:site_name" content="Elton ChenYu Ho">
+	<meta property="og:description" content="records of thoughts, works, and experience">
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:title" content="Elton ChenYu Ho">
+	<meta name="twitter:description" content="records of thoughts, works, and experience">
+	<meta property="fb:admins" content="100000501944590" />
+	<meta property="og:image" content="http://res.cloudinary.com/dmtw1fska/image/upload/v1445270337/etce_logo.png">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<link rel="stylesheet" type="text/css" href="css/panel.css">
+	<link rel="stylesheet" type="text/css" href="css/tth.css">
+
+</head>
+<body>
+	<div id="cover"></div>
+	<header>
+		<div class="menuBtn"></div>
+	</header>
+
+	<div class="container">
+		<div id="menu" class="menu">
+			
+			<div id="location" class="block1">
+				<div class="tit1">
+					<h2>地點</h2>
+				</div>
+				<ul id="locations" class="sortable"></ul>
+			</div>
+			
+			<div id="traffic" class="block1">
+				<div class="tit1">
+					<h2>交通方式</h2>
+				</div>
+				<ul class="data">
+					<li>自行開車</li>
+					<li>大眾運輸</li>
+					<li class="action">走路</li>
+				</ul>
+			</div>
+		</div>
+		<div id="listing" style="display: none">
+        <table id="resultsTable">
+            <tbody id="results"></tbody>
+        </table>
+    	</div>
+		<div id="map" class="map">
+			<div id="googleMap" style="width:100%;height:100%;"></div>
+		</div>
+	</div>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA8IeT7372LaiCZWuj0iJpKDiJjZcszN8g&signed_in=true&libraries=places"></script>
+	<script src="js/tth.js"></script>
+</body>
+
+</html>
