@@ -24,11 +24,14 @@
 	    /* @group NIGHT MODE */
 	    function checkNightMode() {
 	        if (getCookie('nightMode') == 'true') {
-	            document.body.classList.toggle('night')
+	            document.body.classList.toggle('night');
+	            document.getElementById("toggle").innerHTML="on";
 	        }
 	    }
 	    function nightMode() {
 	        setCookie('nightMode', document.body.classList.toggle('night'), 9999999);
+	        var current = document.getElementById("toggle").innerHTML;
+	        document.getElementById("toggle").innerHTML = current==="on" ? "off" : "on";
 	    }
 	    /* @end NIGHT MODE */
 	    /* @group COOKIE */
@@ -83,7 +86,7 @@
 	</script>
 </head>
 <body class="home-template" onload="checkNightMode(); addTransitionCSS(); showPage();">
-	<aside class="night-toggle" onmousedown="nightMode()" style="z-index: 9999"></aside>
+	<aside class="night-toggle" id="toggle" onmousedown="nightMode()">off</aside>
 	<div class="container-fluid content fadeIn animated">
 		<div class="row">
 			<div class="col-lg-12">
@@ -117,7 +120,7 @@
 					</div><!-- /.box-content -->
 				</a><!-- /.overlay -->
 				<a href="http://stock.elton.idv.tw"target=_blank>
-					<img src="assets/images/stock.png">
+					<img class="work-img" src="assets/images/stock.png">
 				</a>
 			</article><!-- /.article -->
 			<article class="col-md-6 col-sm-4 no-padding box project link blog-post" style="text-align:center;">
@@ -178,9 +181,6 @@
 				startDelay: 500
 			});
 		});
-	    function nightMode() {
-	        document.body.classList.toggle('night')
-	    }
 
 	    //Google Analysis
 		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){

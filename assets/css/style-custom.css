@@ -208,7 +208,7 @@ a:focus, a:hover {
     color: #428bca;
 }
 p a:focus, p a:hover{ 
-	border-bottom: 2px solid #428bca;
+    border-bottom: 2px solid #428bca;
     padding-bottom: 1.5px; 
 }
 a:focus {
@@ -1539,7 +1539,7 @@ article:hover .overlay {
     padding-left: 25px;
 }
 .single div div > ol, .single div div > ul{
-	margin: 0 0 35px 0;
+    margin: 0 0 35px 0;
 }
 .single ol {
     padding-left: 35px;
@@ -1670,9 +1670,10 @@ span.underline {
 }
 .hidden{ display: none; }
 
-aside.night-toggle {background-color:rgb(38,38,38);border-radius:12px;cursor:pointer;height:24px;position:fixed;right:10px;top:10px;width:24px;margin:20px}
-body.night aside.night-toggle {background-color:rgb(239,239,239)}
+aside.night-toggle {text-align:center;font-size:22px;color:rgb(239,239,239);z-index: 9999;background-color:rgb(38,38,38);border-radius:15px;cursor:pointer;height:30px;position:fixed;right:10px;top:10px;width:30px;margin:20px}
+body.night aside.night-toggle {background-color:rgb(239,239,239);color:rgb(38,38,38);}
 body.night .blog-post{color:rgb(203,203,203)}
+body.night img {opacity:0.7;}
 body.night {background-color:rgb(38,38,38)}
 
 @media all and (max-width:954px) {
