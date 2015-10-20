@@ -17,132 +17,178 @@
 	<meta name="twitter:description" content="records of thoughts, works, and experience">
     <meta property="fb:admins" content="100000501944590" />
     <meta property="og:image" content="http://www.gravatar.com/avatar/16cdfe11c90d167d52e39f7a7938d543?s=640"/>
+    <link rel="stylesheet" type="text/css" href="assets/css/style-custom.css" />
 	<title>Project Hall | Elton ChenYu Ho</title>
-
-
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-	<link rel="stylesheet" type="text/css" href="assets/css/style-custom.css" />
-
-
-
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','http://www.google-analytics.com/analytics.js','ga');
-  ga('create', 'UA-68981848-1', 'auto');
-  ga('send', 'pageview');
-</script>
-
-
+	<script>
+	    /* @group NIGHT MODE */
+	    function checkNightMode() {
+	        if (getCookie('nightMode') == 'true') {
+	            document.body.classList.toggle('night')
+	        }
+	    }
+	    function nightMode() {
+	        setCookie('nightMode', document.body.classList.toggle('night'), 9999999);
+	    }
+	    /* @end NIGHT MODE */
+	    /* @group COOKIE */
+	    function getCookie(name) {
+	        var i, x, y, values = document.cookie.split('; ');
+	        for (i = 0; i < values.length; i++) {
+	            x = values[i].substr(0, values[i].indexOf('='));
+	            y = values[i].substr(values[i].indexOf('=') + 1);
+	            x = x.replace(/^\s+|\s+$/g, '');
+	            if (x == name) {
+	                return decodeURIComponent(y.replace(/\+/g, ' '));
+	            }
+	        }
+	        return '';
+	    }
+	    function setCookie(name, value, days) {
+	        clearCookie(name);
+	        createCookie(name, value, days);
+	    }
+	    function createCookie(name, value, days) {
+	        var expires;
+	        if (days) {
+	            var date = new Date();
+	            date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+	            expires = '; expires=' + date.toGMTString();
+	        }
+	        else {
+	            expires = '';
+	        }
+	        window.parent.document.cookie = name + '=' + value + expires + '; path=/';
+	    }
+	    function clearCookie(name) {
+	        createCookie(name, '', -1);
+	    }
+	    /* @end COOKIE */
+	    /* @group CSS */
+	    function showPage() {
+	        window.setTimeout(function(){document.body.style.opacity = '1'}, 100);
+	    }
+	    function addTransitionCSS() {
+	        window.setTimeout(function(){addTransitionCSSTimeout()}, 100);
+	    }
+	    function addTransitionCSSTimeout() {
+	        var sheets = document.styleSheets;
+	        for (var i = 0; i < sheets.length; i++) {
+	            if (sheets[i].href && sheets[i].href.indexOf('style-custom.css') != -1) {
+	                sheets[i].insertRule('body,aside.night-toggle{transition:background .6s}', sheets[i].cssRules!==null ? sheets[i].cssRules.length : 0);
+	            }
+	        }
+	    }
+	    /* @end CSS */
+	</script>
 </head>
-
-<body class="home-template">
-<aside class="night-toggle" onmousedown="nightMode()"></aside>
-
-<div class="container-fluid content fadeIn animated">
-	<div class="row">
-		<div class="col-lg-12">
-			<div class="title-container">
-				<h1 class="fadeInDown animated title"></h1>
-			</div><!-- /.title -->
-
-			<hr>
-
-			<div class="col-lg-6 padding-right left-column">
-				<p class="blog-post">I am a student studying in National Taiwan Unversity.  I created this website to record learning experience and show what projects I've done or currently working hard on.</p>
-			</div><!-- /.col -->
-
-			<div class="col-lg-6 padding-left right-column">
-				<p class="blog-post">The theme is modified from <a href="http://alen-vuletic.from.hr/minto-theme/">Minto theme for ghost</a> by Alen Vuletic.</p>
-			</div><!-- /.col -->
-
-			<div class="col-lg-12 full-column">
-				<p class=" blog-post"><br>Any comments? Feel free to send me an email on <span class="button underline">ck6tp6m4@gmail.com</span></p>
-			</div><!-- /.col -->
-
+<body class="home-template" onload="checkNightMode(); addTransitionCSS(); showPage();">
+	<aside class="night-toggle" onmousedown="nightMode()" style="z-index: 9999"></aside>
+	<div class="container-fluid content fadeIn animated">
+		<div class="row">
 			<div class="col-lg-12">
-				<h2>Projects</h2>
-				<hr class="tiny">
+				<div class="title-container">
+					<h1 class="fadeInDown animated title"></h1>
+				</div><!-- /.title -->
+				<hr>
+				<div class="col-lg-6 padding-right left-column">
+					<p class="blog-post">I am a student studying in National Taiwan Unversity.  I created this website to record learning experience and show what projects I've done or currently working hard on.</p>
+				</div><!-- /.col -->
+				<div class="col-lg-6 padding-left right-column">
+					<p class="blog-post">The theme is modified from <a href="http://alen-vuletic.from.hr/minto-theme/">Minto theme for ghost</a> by Alen Vuletic.</p>
+				</div><!-- /.col -->
+				<div class="col-lg-12 full-column">
+					<p class=" blog-post"><br>Any comments? Feel free to send me an email on <span class="button underline">ck6tp6m4@gmail.com</span></p>
+				</div><!-- /.col -->
+				<div class="col-lg-12">
+					<h2>Projects</h2>
+					<hr class="tiny">
+				</div><!-- /.col -->
 			</div><!-- /.col -->
+		</div><!-- /.row -->
+	</div><!-- /.featured-top -->
+	<div class="work">
+		<div class="col-sm-12 no-padding">
+			<article class="col-md-6 col-sm-4 no-padding box project link">
+				<a href="http://stock.elton.idv.tw"target=_blank class="overlay">
+					<div class="box-content">
+						<h1>Stock Management System</h1>
+						<hr>
+					</div><!-- /.box-content -->
+				</a><!-- /.overlay -->
+				<a href="http://stock.elton.idv.tw"target=_blank>
+					<img src="assets/images/stock.png">
+				</a>
+			</article><!-- /.article -->
+			<article class="col-md-6 col-sm-4 no-padding box project link blog-post" style="text-align:center;">
+				<h3>username: test</h3>
+				<h3>password: test</h3>
+				<h4>此庫存管理系統是特別針對家裡的需求設計<br>也可說是讓家人稍稍了解自己在學習什麼東西的第一步<br>比較特別的部份在於庫存尺寸同時有好幾種分法<br>除了常見的 S, M, L 之外還有 32, 34, 36 等的數字尺寸分法</h4>
+			</article>
+			<article class="col-md-6 col-sm-4 no-padding box project link">
+				<a href="http://elton.idv.tw/blog"target=_blank class="overlay">
+					<div class="box-content">
+						<h1>Personal Blog</h1>
+						<hr>
+					</div><!-- /.box-content -->
+				</a><!-- /.overlay -->
+				<a href="http://elton.idv.tw/blog"target=_blank>
+					<img src="assets/images/blog.png">
+				</a>
+			</article><!-- /.article -->
+			<article class="col-md-6 col-sm-4 no-padding box project link">
+			</article>
+			<article class="col-md-6 col-sm-4 no-padding box project link">
+				<a href="http://elton.idv.tw/etce"target=_blank class="overlay">
+					<div class="box-content">
+						<h1>Disease Warner for Google Map</h1>
+						<hr>
+					</div><!-- /.box-content -->
+				</a><!-- /.overlay -->
+				<a href="http://elton.idv.tw/etce"target=_blank>
+					<img src="assets/images/etce.png">
+				</a>
+			</article><!-- /.article -->
+			<article class="col-md-6 col-sm-4 no-padding box project link blog-post" style="text-align:center;">
+				<h4>ETCE 是 2015/10/6 參與臺泰跨國黑客競賽的作品<br>目標是結合 Google Map API<br>	當使用者規劃之旅程經過疫情嚴重區域時<br>顯示警示資訊<br>此想法的價值在於不要求使用者額外下載 APP<br>不需要使用者特別記得做旅程規劃時要查詢疫區資訊<br>並且透過將資料轉為 geoJSON 格式<br>可將應用範圍擴大至急難避災、交通管理等</h4>
+			</article>
+			<article class="col-md-6 col-sm-4 no-padding box project link">
+				<a href="http://github.com/elton-ho/handwriting.js"target=_blank class="overlay">
+					<div class="box-content">
+						<h1>Handwriting.js</h1>
+						<hr>
+					</div><!-- /.box-content -->
+				</a><!-- /.overlay -->
+				<a href="http://github.com/elton-ho/handwriting.js"target=_blank>
+					<img src="assets/images/handwriting.js.png">
+				</a>
+			</article><!-- /.article -->
+			<article class="col-md-6 col-sm-4 no-padding box project link blog-post" style="text-align:center;">
+				<h4>handwriting.js 是介接 google 手寫辨識 API 的捷徑<br>透過預先定義之 handwriting 物件<br>包含常用之復原、重做及預測結果過濾<br>讓 Web App 實作手寫相關功能的門檻大幅降低</h4>
+			</article>
 		</div><!-- /.col -->
-	</div><!-- /.row -->
-</div><!-- /.featured-top -->
-
-<div class="work">
-	<div class="col-sm-12 no-padding">
-		
-		<article class="col-md-6 col-sm-4 no-padding box project link">
-			<a href="http://stock.elton.idv.tw"target=_blank class="overlay">
-				<div class="box-content">
-					<h1>Stock Management System</h1>
-					<hr>
-				</div><!-- /.box-content -->
-			</a><!-- /.overlay -->
-			
-						<a href="http://stock.elton.idv.tw"target=_blank>
-				<img src="assets/images/stock.png">
-			</a>
-		</article><!-- /.article -->
-		<article class="col-md-6 col-sm-4 no-padding box project link blog-post" style="text-align:center;">
-		<h3>username: test</h3>
-		<h3>password: test</h3>
-		<h4>此庫存管理系統是特別針對家裡的需求設計<br>也可說是讓家人稍稍了解自己在學習什麼東西的第一步<br>比較特別的部份在於庫存尺寸同時有好幾種分法<br>除了常見的 S, M, L 之外還有 32, 34, 36 等的數字尺寸分法</h4>
-		</article>
-		<article class="col-md-6 col-sm-4 no-padding box project link">
-			<a href="/blog"target=_blank class="overlay">
-				<div class="box-content">
-					<h1>Personal Blog</h1>
-					<hr>
-				</div><!-- /.box-content -->
-			</a><!-- /.overlay -->
-			
-						<a href="/blog"target=_blank>
-				<img src="assets/images/blog.png">
-			</a>
-		</article><!-- /.article -->
-		<article class="col-md-6 col-sm-4 no-padding box project link">
-		</article>
-		<article class="col-md-6 col-sm-4 no-padding box project link">
-			<a href="/etce"target=_blank class="overlay">
-				<div class="box-content">
-					<h1>Disease Warner for Google Map</h1>
-					<hr>
-				</div><!-- /.box-content -->
-			</a><!-- /.overlay -->
-			
-						<a href="/etce"target=_blank>
-				<img src="assets/images/etce.png">
-			</a>
-		</article><!-- /.article -->
-		<article class="col-md-6 col-sm-4 no-padding box project link blog-post" style="text-align:center;">
-		<h4>ETCE 是 2015/10/6 參與臺泰跨國黑客競賽的作品<br>
-		目標是結合 Google Map API<br>
-		當使用者規劃之旅程經過疫情嚴重區域時<br>
-		顯示警示資訊<br>
-		此想法的價值在於不要求使用者額外下載 APP<br>
-		不需要使用者特別記得做旅程規劃時要查詢疫區資訊<br>
-		並且透過將資料轉為 geoJSON 格式<br>
-		可將應用範圍擴大至急難避災、交通管理等</h4>
-		</article>
-	</div><!-- /.col -->
-</div><!-- /.work -->
-
-<script>
-	$(function(){
-		$(".title").typed({
-			strings: ["Welcome to Elton ChenYu Ho's website"],
-			typeSpeed: 60,
-			showCursor: true,
-			startDelay: 500
-		});
-	});
-
-        function nightMode() {
-            document.body.classList.toggle('night')
-        }
-</script>
+	</div><!-- /.work -->
 	<script type="text/javascript" src="assets/js/typed.js"></script>
+	<script>
+		$(function(){
+			$(".title").typed({
+				strings: ["Welcome to Elton ChenYu Ho's website"],
+				typeSpeed: 60,
+				showCursor: true,
+				startDelay: 500
+			});
+		});
+	    function nightMode() {
+	        document.body.classList.toggle('night')
+	    }
 
+	    //Google Analysis
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		  })(window,document,'script','http://www.google-analytics.com/analytics.js','ga');
+		  ga('create', 'UA-68981848-1', 'auto');
+		  ga('send', 'pageview');
+	</script>
 </body>
 </html>
