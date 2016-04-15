@@ -218,10 +218,10 @@ $(document).ready(function() {
 		travelMode = modes[$(this).text()];
 		if ($(this).text() === 'Ubike') {
 			ubike = true;
-			parking = false;
+			cbike = false;
 		} else if($(this).text() === 'Cbike') {
 			cbike = true;
-			parking = false;
+			ubike = false;
 		} else {
 			ubike = false;
 			cbike = false;
@@ -239,17 +239,8 @@ $(document).ready(function() {
 		travelMode = google.maps.TravelMode.DRIVING;
 		optimizatonMode = $(this).index();
 		if (optimizatonMode == 1) {
-			parking = false;
 			ubike = false;
-			cbike = true;
-		}
-		if ($(this).text() == '我要停車!') {
-			parking = true;
-			ubike = false;
-			cbike = true;
-		}
-		else {
-			parking = false;
+			cbike = false;
 		}
 		calculateAndDisplayRoute();
 	});
