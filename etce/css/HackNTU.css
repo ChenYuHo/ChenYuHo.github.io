@@ -1,0 +1,351 @@
+@charset "utf-8";
+@import "reset.css";
+
+body {
+	font: 1em/1rem "微軟正黑體","museo-sans","Hiragino Kaku Gothic Pro",Meiryo, Helvetica, Arial, Verdana, sans-serif;
+	cursor: context-menu;
+}
+
+header{
+	width: 100%;
+	height: 50px;
+	background-color: #FFA409;
+}
+
+ul, li{
+	list-style: none;
+}
+
+#cover{
+	width: 100%;
+	height: 100%;
+	background-color: #FFA409;
+	background-image: url("../img/logo.png");
+	background-size: 50%;
+	background-repeat: no-repeat;
+	background-position: 50% 50%;
+	position: fixed;
+	z-index: 10;
+}
+
+.menuBtn{
+	width: 60px;
+	height: 100%;
+	background-image: url("../img/menu48.png");
+	background-size: 20px;
+	background-repeat: no-repeat;
+	background-position: 20px 50%;
+	display: none;
+	cursor: pointer;
+}
+
+.menuBtn:hover{
+	background-color: #F08F00;
+}
+
+.searchBtn{
+	width: 60px;
+	height: 100%;
+	background-image: url("../img/menu49.png");
+	background-size: 20px;
+	background-repeat: no-repeat;
+	background-position: 20px 50%;
+	display: inline-block;
+	cursor: pointer;
+}
+
+.searchBtn:hover{
+	background-color: #F08F00;
+}
+
+.menu{
+	width: 20%;
+	height: calc(100% - 50px);
+	background-color: #FDFDFD;
+	box-shadow: 1px 5px 5px 0px rgba(136, 136, 136, 0.5);
+	position: fixed;
+	overflow-y: scroll;
+	z-index: 2;
+}
+
+
+.menu img{
+	height: 100%;
+	width: 100%;
+}
+
+.block1{
+	border-bottom: 1px solid rgb(224, 224, 224);
+}
+
+.block1 h2{
+	background-image: url("../img/arrow483.png");
+	background-size: 15px;
+	background-repeat: no-repeat;
+	background-position: 100% 50%;
+}
+
+.block1 li{
+	padding: 20px 50px;
+}
+
+.block2{
+	border-bottom: 1px solid rgb(224, 224, 224);
+}
+
+.block2 h2{
+	background-image: url("../img/arrow483.png");
+	background-size: 15px;
+	background-repeat: no-repeat;
+	background-position: 100% 50%;
+}
+
+.block2 li{
+	padding: 20px 50px;
+}
+
+#location li{
+	padding: 20px;
+	position: relative;
+	cursor: move;
+}
+
+#location .cancel{
+	width: 20px;
+	height: 20px;
+	background-color: #949494;
+	background-image: url("../img/cancel30.png");
+	background-size: 10px;
+	background-repeat: no-repeat;
+	background-position: 50% 50%;
+	border-radius: 10px;
+	position: absolute;
+	top: calc(50% - 10px);
+	right: 15px;
+	cursor: pointer;
+}
+
+#location .cancel:hover{
+	background-color: #757575;
+}
+
+#traffic li{
+	background-image: url("../img/car189.png");
+	background-size: 20px;
+	background-repeat: no-repeat;
+	background-position: 20px 50%;
+}
+
+#traffic li:nth-child(2){
+	background-image: url("../img/bus55.png");
+}
+
+#traffic li:nth-child(3){
+	background-image: url("../img/walking.png");
+}
+
+#traffic li:nth-child(4){
+	background-image: url("../img/bike15.png");
+}
+
+#traffic li:nth-child(5){
+	background-image: url("../img/bike15.png");
+}
+
+#traffic li:nth-child(6){
+	background-image: url("../img/transport595.png");
+}
+
+#route li{
+	background-image: url("../img/parking.jpeg");
+	background-size: 20px;
+	background-repeat: no-repeat;
+	background-position: 20px 50%;
+}
+
+#route li:nth-child(2){
+	background-image: url("../img/charging.jpeg");
+	background-size: 20px;
+	background-repeat: no-repeat;
+	background-position: 20px 50%;
+}
+
+#route li:nth-child(3){
+	background-image: url("../img/jogging.png");
+	background-size: 20px;
+	background-repeat: no-repeat;
+	background-position: 20px 50%;
+}
+
+.tit1{
+	padding: 20px;
+	border-bottom: 1px solid rgb(224, 224, 224);
+	background-color: #F6F6F6;
+}
+
+#traffic li:hover, .submit:hover{
+	background-color: #F0F0F0;
+	box-shadow: 0px 0px 10px rgba(136, 136, 136, 0.5) inset;
+}
+
+.titclosed{
+	background-color: #FDFDFD;
+}
+
+.action{
+	background-color: #E5E5E5;
+}
+
+.map{
+	width: 80%;
+	float: right;
+	height: calc(100% - 50px);
+	position: relative;
+}
+
+.search{
+	position: absolute;
+	padding: 5px;
+	border: 1px solid #ffffff;
+	border-radius: 5px;
+	background-color: #F2F2F2;
+	min-width: 10%;
+	max-width: 100%;
+	right: calc(50% - 93px);
+	top: 10px;
+	z-index: 1;
+}
+
+.submit{
+	padding: 5px 10px;
+	font-size: 18px;
+	text-align: center;
+	background-color: #E5E5E5;
+	border-radius: 5px;
+	display: inline-block;
+}
+
+
+/*-------------------------------------*/
+
+
+input[type="text"] {
+	/*position: relative;
+	background: #FFF none repeat scroll 0% 0%;
+	border-radius: 2px;
+	box-sizing: border-box;
+	height: 48px;
+	border-bottom: 1px solid transparent;
+	padding: 12px 104px 11px 64px;
+	transition-property: background, box-shadow;
+	transition-duration: 0.3s;
+	width: 392px;*/
+	background-color: #FFF;
+	height: 35px;
+	text-align: center;
+	width: 300px;
+}
+
+.menu::-webkit-scrollbar {
+    width: 2px;
+	height: 5px;
+}
+.menu::-webkit-scrollbar-track {
+    background-color: #cccccc;
+} 
+.menu::-webkit-scrollbar-thumb {
+    background-color: #949494;
+}
+.menu::-webkit-scrollbar-button {
+    background-color: #797878;
+	height: 1px;
+}
+.menu::-webkit-scrollbar-corner {
+    background-color: purple;
+}
+
+
+/**************************************************RWD**************************************************/
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+	.menu{
+		width: 200px;
+	}
+	
+	.map{
+		width: calc(100% - 200px);
+	}
+}
+
+@media screen and (min-width: 0px) and (max-width: 767px) {
+	.menu{
+		width: 100%;
+		display: none;
+	}
+	
+	.map{
+		width: 100%;
+	}
+	
+	.menuBtn{
+		display: inline-block;
+	}
+	
+	.searchBtn{
+		display: inline-block;
+	}
+	
+	.search{
+		width: 100%;
+		padding: 0px;
+		box-sizing: border-box;
+		border: none;
+		border-radius: 0px;
+		right: 0px;
+		top: initial;
+		bottom: 0px;
+		z-index: 1;
+	}
+}
+
+#modal-background {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    opacity: .50;
+    -webkit-opacity: .5;
+    -moz-opacity: .5;
+    filter: alpha(opacity=50);
+    z-index: 1000;
+}
+
+#modal-content {
+    background-color: orange;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    box-shadow: 0 0 20px 0 #222;
+    -webkit-box-shadow: 0 0 20px 0 #222;
+    -moz-box-shadow: 0 0 20px 0 #222;
+    display: none;
+    height: 150px;
+    left: 50%;
+    margin: -200px 0 0 -350px;
+    padding: 15px;
+    position: fixed;
+    top: 50%;
+    width: 310px;
+    z-index: 1000;
+}
+
+#modal-background.active, #modal-content.active {
+    display: block;
+}
+
+#pac-input{
+	
+}
