@@ -14,7 +14,6 @@ var intersections = [];
 
 var cbike = false;
 var ubike = false;
-var parking = false;
 var showDisease = false;
 
 // Default travel mode of the map
@@ -216,6 +215,7 @@ $(document).ready(function() {
 		$('.block1 li').removeClass('action');
 		$(this).toggleClass('action');
 		travelMode = modes[$(this).text()];
+		console.log($(this).text());
 		if ($(this).text() === 'Ubike') {
 			ubike = true;
 			cbike = false;
@@ -290,6 +290,9 @@ function decodeName(latlng, i) {
 }
 
 function calculateAndDisplayRoute() {
+	console.log(ubike);
+	console.log("00")
+	console.log(cbike);
 	for (var i = 0; i < featureMarker.length; ++i) {
 		featureMarker[i].setMap(null);
 	}
@@ -311,9 +314,6 @@ function calculateAndDisplayRoute() {
 	//treat one point as inquiry if ubike or parking option is enabled
 	if (array.length === 1) {
 		if (ubike) {
-			return;
-		}
-		else if (parking) {
 			return;
 		}
 		else if (cbike) {
@@ -518,9 +518,6 @@ function calculateAndDisplayRoute() {
 				};
 			})(cbikeStopMarker, infowindow));
 		});
-	}
-	else if (parking) {
-
 	}
 	else {
 		for (var i = 1; i < array.length - 1; i++) {
