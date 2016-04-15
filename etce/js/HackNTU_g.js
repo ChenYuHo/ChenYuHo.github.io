@@ -555,7 +555,7 @@ function calculateAndDisplayRoute() {
 		var settings = {
 			"async": true,
 			"crossDomain": true,
-			"url": "http://stock.elton.idv.tw/geo/geo/charge",
+			"url": "http://stock.elton.idv.tw/geo/charge",
 			"method": "POST",
 			"headers": {},
 			"data": {
@@ -613,7 +613,7 @@ function calculateAndDisplayRoute() {
 					var settings = {
 						"async": true,
 						"crossDomain": true,
-						"url": "http://stock.elton.idv.tw/geo/geo/lineString",
+						"url": "http://stock.elton.idv.tw/geo/lineString",
 						"method": "POST",
 						"headers": {},
 						"data": {
@@ -664,7 +664,7 @@ function calculateAndDisplayRoute() {
 					var settings = {
 						"async": true,
 						"crossDomain": true,
-						"url": "http://stock.elton.idv.tw/geo/geo/lineString",
+						"url": "http://stock.elton.idv.tw/geo/lineString",
 						"method": "POST",
 						"headers": {},
 						"data": {
