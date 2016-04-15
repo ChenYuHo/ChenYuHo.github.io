@@ -36,7 +36,7 @@ google.maps.event.addDomListener(window, 'load', initialize);
 
 function initialize() {
 	var mapProp = {  //22.628482, 120.356922
-		center: new google.maps.LatLng(22.628482,120.356922),
+		center: new google.maps.LatLng(25.063535,121.520095),
 		zoom: 13,
 		mapTypeControl: false,
 		mapTypeId: google.maps.MapTypeId.ROADMAP
@@ -376,7 +376,7 @@ function calculateAndDisplayRoute() {
 				},
 				map: map,
 				icon: {
-					url: 'img/ubike_resized.png',
+					url: 'http://elton.idv.tw/etce/img/ubike_resized.png',
 					size: new google.maps.Size(47, 46),
 					origin: new google.maps.Point(0, 0)
 				},
@@ -406,7 +406,7 @@ function calculateAndDisplayRoute() {
 				},
 				map: map,
 				icon: {
-					url: 'img/ubike_resized.png',
+					url: 'http://elton.idv.tw/etce/img/ubike_resized.png',
 					size: new google.maps.Size(48, 48),
 					origin: new google.maps.Point(0, 0)
 				},
@@ -473,7 +473,7 @@ function calculateAndDisplayRoute() {
 				},
 				map: map,
 				icon: {
-					url: 'img/bicycle19.png',
+					url: 'http://elton.idv.tw/etce/img/bicycle19.png',
 					size: new google.maps.Size(64, 64),
 					origin: new google.maps.Point(0, 0)
 				},
@@ -503,7 +503,7 @@ function calculateAndDisplayRoute() {
 				},
 				map: map,
 				icon: {
-					url: 'img/bicycle19.png',
+					url: 'http://elton.idv.tw/etce/img/bicycle19.png',
 					size: new google.maps.Size(64, 64),
 					origin: new google.maps.Point(0, 0)
 				},
@@ -717,7 +717,7 @@ function setSpiderMarkers() {
 			},
 			map: map,
 			icon: {
-				url: 'img/red.png', //在下面判定人數後指定
+				url: 'http://elton.idv.tw/etce/img/red.png', //在下面判定人數後指定
 				// This marker is 20 pixels wide by 32 pixels high.
 				size: new google.maps.Size(47, 46),
 				// The origin for this image is (0, 0).
@@ -739,16 +739,16 @@ function setSpiderMarkers() {
 		var patientNum = intersection[3];
 		if (patientNum > 10000) {}
 		else if (patientNum > 1000) {
-			marker.icon.url = 'img/orange.png';
+			marker.icon.url = 'http://elton.idv.tw/etce/img/orange.png';
 		}
 		else if (patientNum > 50) {
-			marker.icon.url = 'img/yellow.png';
+			marker.icon.url = 'http://elton.idv.tw/etce/img/yellow.png';
 		}
 		else if (patientNum > 10) {
-			marker.icon.url = 'img/purple.png';
+			marker.icon.url = 'http://elton.idv.tw/etce/img/purple.png';
 		}
 		else {
-			marker.icon.url = 'img/blue.png';
+			marker.icon.url = 'http://elton.idv.tw/etce/img/blue.png';
 		}
 		///////////////  差別 end
 
@@ -788,7 +788,7 @@ function setBatteryMarkers(i) {
 		},
 		map: map,
 		icon: {
-			url: 'img/battery.png', //在下面判定人數後指定
+			url: 'http://elton.idv.tw/etce/img/battery.png', //在下面判定人數後指定
 			// This marker is 20 pixels wide by 32 pixels high.
 			size: new google.maps.Size(47, 46),
 			// The origin for this image is (0, 0).
