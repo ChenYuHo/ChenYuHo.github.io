@@ -1,42 +1,34 @@
 <html>
+
 <head>
-	<title>Disease Warner | TTH Hackathon</title>
+	<title>ESOE_ODAC</title>
 	<meta charset="utf-8">
-	<meta http-equiv="Content-Type" content="text/html" charset="UTF-8">
-    <meta name="generator" content="Elton ChenYu Ho">
-    <meta name="author" content="Elton ChenYu Ho">
-	<meta name="description" content="records of thoughts, works, and experience">
-	<meta property="og:type" content="blog">
-	<meta property="og:title" content="Elton ChenYu Ho">
-	<meta property="og:url" content="http://elton.idv.tw/index.html">
-	<meta property="og:site_name" content="Elton ChenYu Ho">
-	<meta property="og:description" content="records of thoughts, works, and experience">
-	<meta name="twitter:card" content="summary">
-	<meta name="twitter:title" content="Elton ChenYu Ho">
-	<meta name="twitter:description" content="records of thoughts, works, and experience">
-	<meta property="fb:admins" content="100000501944590" />
-	<meta property="og:image" content="http://res.cloudinary.com/dmtw1fska/image/upload/v1445270337/etce_logo.png">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 	<link rel="stylesheet" type="text/css" href="css/panel.css">
-	<link rel="stylesheet" type="text/css" href="css/tth.css">
-
+	<link rel="stylesheet" type="text/css" href="css/HackNTU.css">
+	<!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>-->
 </head>
+
 <body>
 	<div id="cover"></div>
 	<header>
-		<div class="menuBtn"></div>
+		<span class="menuBtn"></span>
+		<span class="searchBtn"></span>
+		<span><input style="display:block;" id="pac-input" name="pac-input" class="input" type="text" 
+			placeholder="Enter a location"></input></span>
 	</header>
 
 	<div class="container">
 		<div id="menu" class="menu">
-			
+
 			<div id="location" class="block1">
 				<div class="tit1">
 					<h2>地點</h2>
 				</div>
 				<ul id="locations" class="sortable"></ul>
 			</div>
-			
+
 			<div id="traffic" class="block1">
 				<div class="tit1">
 					<h2>交通方式</h2>
@@ -45,22 +37,103 @@
 					<li>自行開車</li>
 					<li>大眾運輸</li>
 					<li class="action">走路</li>
+					<li>Ubike</li>
+					<li>Cbike</li>
+					<!--<li>Transport</li>-->
 				</ul>
 			</div>
+
+			<div id="route" class="block2">
+				<div class="tit1">
+					<h2>行程最佳化</h2>
+				</div>
+				<ul>
+					<li id="userLocation">我在哪裡！</li>
+					<!--<li>我要停車！</li>-->
+					<li id="battery">我要充電！</li>
+					<li id="disease">我要登革熱！</li>
+					<!--<li>我要用跑的！</li>-->
+				</ul>
+			</div>
+
 		</div>
+
 		<div id="listing" style="display: none">
-        <table id="resultsTable">
-            <tbody id="results"></tbody>
-        </table>
-    	</div>
+			<table id="resultsTable">
+				<tbody id="results"></tbody>
+			</table>
+		</div>
+		
 		<div id="map" class="map">
 			<div id="googleMap" style="width:100%;height:100%;"></div>
 		</div>
 	</div>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA8IeT7372LaiCZWuj0iJpKDiJjZcszN8g&signed_in=true&libraries=places"></script>
-	<script src="js/tth.js"></script>
+
+	<footer></footer>
+	<div style="display: none">
+		<div id="info-content">
+			<table>
+				<tr id="iw-url-row" class="iw_table_row">
+					<td id="iw-icon" class="iw_table_icon"></td>
+					<td id="iw-url"></td>
+				</tr>
+				<tr id="iw-address-row" class="iw_table_row">
+					<td class="iw_attribute_name">Address:</td>
+					<td id="iw-address"></td>
+				</tr>
+				<tr id="iw-phone-row" class="iw_table_row">
+					<td class="iw_attribute_name">Telephone:</td>
+					<td id="iw-phone"></td>
+				</tr>
+				<tr id="iw-rating-row" class="iw_table_row">
+					<td class="iw_attribute_name">Rating:</td>
+					<td id="iw-rating"></td>
+				</tr>
+				<tr id="iw-website-row" class="iw_table_row">
+					<td class="iw_attribute_name">Website:</td>
+					<td id="iw-website"></td>
+				</tr>
+			</table>
+		</div>
+	</div>
+	<div id="modal-background"></div>
+	<div id="modal-content" title="請輸入電動車資料">
+        <form>
+        	<div>
+        		<label>滿電時可行駛里程數（公里）Service distance (km)</label>
+        		<input type="text" id="distance" value="50"></input>
+        	</div>
+        	<div>
+       		<label>Left power出發時剩餘電力(%)</label>
+        		<input type="text" class="input" id="power" value="50"></input>
+        	</div>
+        	<div>
+        		<input type="button" id="submit" value="Submit"></input>
+        	</div>
+        </form>
+	    <button id="modal-close">Close</button>
+	</div>
+	<script src="js/jquery-1.11.3.js"></script>
+	<script src="js/jquery-ui.js"></script>
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA8IeT7372LaiCZWuj0iJpKDiJjZcszN8g&signed_in=true&libraries=places"></script>
+	<!--<script src="https://maps.googleapis.com/maps/api/js?signed_in=true&libraries=places"></script>-->
+	<script src="js/HackNTU_g.js"></script>
+	<!--<script type="text/javascript" src="js/autocomplete.js"></script>-->
+	<!--<script type="text/javascript" src="js/searchbox.js"></script>-->
+	<script>
+		$('.searchBtn').on('click', function() {
+			var search = $('#pac-input');
+			if (search.css('display') == 'none'){
+				search.fadeIn('slow').css("display", "block").focus();
+			}else if(search.css('display') == 'block') 
+				search.fadeOut('slow', function(){
+					search.css("display", "none")
+				});
+		})
+		$("#battery, #modal-background, #modal-close").click(function() {
+		        $("body, #modal-content, #modal-background").toggleClass("active");
+		});
+	</script>
 </body>
 
 </html>
