@@ -339,7 +339,7 @@ function calculateAndDisplayRoute() {
 			//can't be asyncronous since we want those ubike stops
 			"async": false,
 			"crossDomain": true,
-			"url": "/ubike",
+			"url": "http://stock.elton.idv.tw/geo/ubike",
 			"method": "POST",
 			"headers": {},
 			"data": {
@@ -436,7 +436,7 @@ function calculateAndDisplayRoute() {
 			//can't be asyncronous since we want those cbike stops
 			"async": false,
 			"crossDomain": true,
-			"url": "/cbike",
+			"url": "http://stock.elton.idv.tw/geo/cbike",
 			"method": "POST",
 			"headers": {},
 			"data": {
@@ -555,7 +555,7 @@ function calculateAndDisplayRoute() {
 		var settings = {
 			"async": true,
 			"crossDomain": true,
-			"url": "/geo/charge",
+			"url": "http://stock.elton.idv.tw/geo/geo/charge",
 			"method": "POST",
 			"headers": {},
 			"data": {
@@ -613,7 +613,7 @@ function calculateAndDisplayRoute() {
 					var settings = {
 						"async": true,
 						"crossDomain": true,
-						"url": "/geo/lineString",
+						"url": "http://stock.elton.idv.tw/geo/geo/lineString",
 						"method": "POST",
 						"headers": {},
 						"data": {
@@ -664,7 +664,7 @@ function calculateAndDisplayRoute() {
 					var settings = {
 						"async": true,
 						"crossDomain": true,
-						"url": "/geo/lineString",
+						"url": "http://stock.elton.idv.tw/geo/geo/lineString",
 						"method": "POST",
 						"headers": {},
 						"data": {
