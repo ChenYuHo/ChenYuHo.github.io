@@ -199,7 +199,7 @@ function calculateAndDisplayRoute() {
 			var settings = {
 				"async": true,
 				"crossDomain": true,
-				"url": "http://stock.elton.idv.tw/geo/lineString",
+				"url": "http://stock.chenyuho.com/geo/lineString",
 				"method": "POST",
 				"headers": {},
 				"data": {

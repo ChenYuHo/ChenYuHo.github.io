@@ -330,7 +330,7 @@ function calculateAndDisplayRoute() {
 			//can't be asyncronous since we want those ubike stops
 			"async": false,
 			"crossDomain": true,
-			"url": "http://stock.elton.idv.tw/geo/ubike",
+			"url": "http://stock.chenyuho.com/geo/ubike",
 			"method": "POST",
 			"headers": {},
 			"data": {
@@ -367,7 +367,7 @@ function calculateAndDisplayRoute() {
 				},
 				map: map,
 				icon: {
-					url: 'http://elton.idv.tw/etce/img/ubike_resized.png',
+					url: 'http://chenyuho.com/etce/img/ubike_resized.png',
 					size: new google.maps.Size(47, 46),
 					origin: new google.maps.Point(0, 0)
 				},
@@ -397,7 +397,7 @@ function calculateAndDisplayRoute() {
 				},
 				map: map,
 				icon: {
-					url: 'http://elton.idv.tw/etce/img/ubike_resized.png',
+					url: 'http://chenyuho.com/etce/img/ubike_resized.png',
 					size: new google.maps.Size(48, 48),
 					origin: new google.maps.Point(0, 0)
 				},
@@ -427,7 +427,7 @@ function calculateAndDisplayRoute() {
 			//can't be asyncronous since we want those cbike stops
 			"async": false,
 			"crossDomain": true,
-			"url": "http://stock.elton.idv.tw/geo/cbike",
+			"url": "http://stock.chenyuho.com/geo/cbike",
 			"method": "POST",
 			"headers": {},
 			"data": {
@@ -464,7 +464,7 @@ function calculateAndDisplayRoute() {
 				},
 				map: map,
 				icon: {
-					url: 'http://elton.idv.tw/etce/img/bicycle19.png',
+					url: 'http://chenyuho.com/etce/img/bicycle19.png',
 					size: new google.maps.Size(64, 64),
 					origin: new google.maps.Point(0, 0)
 				},
@@ -494,7 +494,7 @@ function calculateAndDisplayRoute() {
 				},
 				map: map,
 				icon: {
-					url: 'http://elton.idv.tw/etce/img/bicycle19.png',
+					url: 'http://chenyuho.com/etce/img/bicycle19.png',
 					size: new google.maps.Size(64, 64),
 					origin: new google.maps.Point(0, 0)
 				},
@@ -543,7 +543,7 @@ function calculateAndDisplayRoute() {
 		var settings = {
 			"async": true,
 			"crossDomain": true,
-			"url": "http://stock.elton.idv.tw/geo/charge",
+			"url": "http://stock.chenyuho.com/geo/charge",
 			"method": "POST",
 			"headers": {},
 			"data": {
@@ -601,7 +601,7 @@ function calculateAndDisplayRoute() {
 					var settings = {
 						"async": true,
 						"crossDomain": true,
-						"url": "http://stock.elton.idv.tw/geo/lineString",
+						"url": "http://stock.chenyuho.com/geo/lineString",
 						"method": "POST",
 						"headers": {},
 						"data": {
@@ -652,7 +652,7 @@ function calculateAndDisplayRoute() {
 					var settings = {
 						"async": true,
 						"crossDomain": true,
-						"url": "http://stock.elton.idv.tw/geo/lineString",
+						"url": "http://stock.chenyuho.com/geo/lineString",
 						"method": "POST",
 						"headers": {},
 						"data": {
@@ -705,7 +705,7 @@ function setSpiderMarkers() {
 			},
 			map: map,
 			icon: {
-				url: 'http://elton.idv.tw/etce/img/red.png', //在下面判定人數後指定
+				url: 'http://chenyuho.com/etce/img/red.png', //在下面判定人數後指定
 				// This marker is 20 pixels wide by 32 pixels high.
 				size: new google.maps.Size(47, 46),
 				// The origin for this image is (0, 0).
@@ -727,16 +727,16 @@ function setSpiderMarkers() {
 		var patientNum = intersection[3];
 		if (patientNum > 10000) {}
 		else if (patientNum > 1000) {
-			marker.icon.url = 'http://elton.idv.tw/etce/img/orange.png';
+			marker.icon.url = 'http://chenyuho.com/etce/img/orange.png';
 		}
 		else if (patientNum > 50) {
-			marker.icon.url = 'http://elton.idv.tw/etce/img/yellow.png';
+			marker.icon.url = 'http://chenyuho.com/etce/img/yellow.png';
 		}
 		else if (patientNum > 10) {
-			marker.icon.url = 'http://elton.idv.tw/etce/img/purple.png';
+			marker.icon.url = 'http://chenyuho.com/etce/img/purple.png';
 		}
 		else {
-			marker.icon.url = 'http://elton.idv.tw/etce/img/blue.png';
+			marker.icon.url = 'http://chenyuho.com/etce/img/blue.png';
 		}
 		///////////////  差別 end
 
@@ -776,7 +776,7 @@ function setBatteryMarkers(i) {
 		},
 		map: map,
 		icon: {
-			url: 'http://elton.idv.tw/etce/img/battery.png', //在下面判定人數後指定
+			url: 'http://chenyuho.com/etce/img/battery.png', //在下面判定人數後指定
 			// This marker is 20 pixels wide by 32 pixels high.
 			size: new google.maps.Size(47, 46),
 			// The origin for this image is (0, 0).
